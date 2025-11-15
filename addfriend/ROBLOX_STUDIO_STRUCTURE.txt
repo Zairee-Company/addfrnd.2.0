@@ -1,0 +1,89 @@
+ROBLOX STUDIO STRUCTURE REFERENCE
+==================================
+
+Copy this structure into Roblox Studio:
+
+ReplicatedStorage
+└── RemoteEvents (Folder)
+    ├── FriendRequest (RemoteEvent)
+    └── FriendRequestResponse (RemoteEvent)
+
+StarterGui
+└── ConnectionRequestGui (ScreenGui)
+    └── RequestFrame (Frame)
+        ├── PlayerNameLabel (TextLabel)
+        ├── MessageLabel (TextLabel)
+        ├── AcceptButton (TextButton)
+        └── DeclineButton (TextButton)
+
+StarterPlayer
+└── StarterPlayerScripts
+    ├── SendConnectionRequest.lua (LocalScript) ✅ Already created
+    ├── DisplayConnectionRequest.lua (LocalScript) ✅ Already created
+    └── AvatarProfileAllInOne.lua (LocalScript) ✅ Already created
+
+ServerScriptService
+└── ConnectionRequestHandler.lua (Script) ✅ Already created
+
+==================================
+QUICK PROPERTY SETTINGS
+==================================
+
+ConnectionRequestGui:
+  ResetOnSpawn = false
+  ZIndexBehavior = Sibling
+
+RequestFrame:
+  AnchorPoint = Vector2.new(0.5, 0.5)
+  Position = UDim2.new(0.5, 0, 0.5, 0)
+  Size = UDim2.new(0, 400, 0, 200)
+  BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+  BorderSizePixel = 0
+  Visible = false  ← IMPORTANT!
+
+PlayerNameLabel:
+  Position = UDim2.new(0, 20, 0, 20)
+  Size = UDim2.new(1, -40, 0, 30)
+  Text = "Player Name wants to connect!"
+  TextColor3 = Color3.fromRGB(255, 255, 255)
+  TextSize = 20
+  Font = Enum.Font.GothamBold
+  BackgroundTransparency = 1
+
+MessageLabel:
+  Position = UDim2.new(0, 20, 0, 60)
+  Size = UDim2.new(1, -40, 0, 40)
+  Text = "Do you want to accept this friend request?"
+  TextColor3 = Color3.fromRGB(200, 200, 200)
+  TextSize = 16
+  BackgroundTransparency = 1
+
+AcceptButton:
+  Position = UDim2.new(0, 20, 1, -60)
+  Size = UDim2.new(0.45, -30, 0, 40)
+  BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+  Text = "Accept"
+  TextColor3 = Color3.fromRGB(255, 255, 255)
+  TextSize = 18
+  BorderSizePixel = 0
+
+DeclineButton:
+  Position = UDim2.new(0.55, 10, 1, -60)
+  Size = UDim2.new(0.45, -30, 0, 40)
+  BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+  Text = "Decline"
+  TextColor3 = Color3.fromRGB(255, 255, 255)
+  TextSize = 18
+  BorderSizePixel = 0
+
+==================================
+TESTING CHECKLIST
+==================================
+
+[ ] RemoteEvents created in ReplicatedStorage/RemoteEvents/
+[ ] ConnectionRequestGui created in StarterGui
+[ ] RequestFrame.Visible = false (starts hidden)
+[ ] All 4 scripts are in correct locations
+[ ] Test with 2+ players in Play mode
+[ ] Check Output window for errors
+
